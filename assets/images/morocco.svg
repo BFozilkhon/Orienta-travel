@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540">
+	<defs>
+		<linearGradient id="skyM" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#ffd8a8"/>
+			<stop offset="1" stop-color="#ffb36b"/>
+		</linearGradient>
+		<linearGradient id="dune" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#ffb26b"/>
+			<stop offset="1" stop-color="#c96a2b"/>
+		</linearGradient>
+	</defs>
+	<rect width="960" height="540" fill="url(#skyM)"/>
+	<path d="M0 340c120-70 260-70 380 0s260 70 380 0 200-50 200-50v250H0Z" fill="url(#dune)"/>
+	<rect x="160" y="300" width="40" height="80" fill="#6b4f2a"/>
+	<path d="M140 300c30-30 70-30 100 0" stroke="#6b4f2a" stroke-width="6" fill="none"/>
+</svg> 

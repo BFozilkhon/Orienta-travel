@@ -55,6 +55,12 @@
           d="M3 6h18a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Zm0 4v2h10v-2H3Zm12 0v2h6v-2h-6Z"
         />
       </symbol>
+      <symbol id="icon-click" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 2a1 1 0 0 1 1 1v9.05l1.17-1.17a1 1 0 0 1 1.66.36l1.6 4.29 1.11-.64a1 1 0 0 1 1.36.37l1.5 2.6a1 1 0 0 1-.37 1.36l-3.63 2.1a2 2 0 0 1-2.7-.73l-1.78-3.08-.93.54A2 2 0 0 1 9 17.93V3a1 1 0 0 1 1-1h2Z"
+        />
+      </symbol>
     </svg>
 
     <header class="site-header">
@@ -347,7 +353,169 @@
         </div>
       </main>
 
-      <footer class="site-footer" id="contact">
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <h2 class="section-title t en">Contact us</h2>
+          <h2 class="section-title t ru">Контакты</h2>
+          <h2 class="section-title t uz">Biz bilan aloqa</h2>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <h3 class="t en">Phone</h3>
+              <h3 class="t ru">Телефон</h3>
+              <h3 class="t uz">Telefon</h3>
+              <a href="tel:+998946541111" class="contact-value"
+                >+998 94 654 11 11</a
+              >
+            </div>
+            <div class="contact-card">
+              <h3 class="t en">Email</h3>
+              <h3 class="t ru">Эл. почта</h3>
+              <h3 class="t uz">Email</h3>
+              <a href="mailto:info@orientatravel.com" class="contact-value"
+                >info@orientatravel.com</a
+              >
+            </div>
+            <div class="contact-card">
+              <h3 class="t en">Location</h3>
+              <h3 class="t ru">Адрес</h3>
+              <h3 class="t uz">Manzil</h3>
+              <p class="contact-value t en">
+                Tashkent city, Almazar district, New Tashmi 3-45 home
+              </p>
+              <p class="contact-value t ru">
+                г. Ташкент, Алмазарский район, Новая ТашМИ, дом 3-45
+              </p>
+              <p class="contact-value t uz">
+                Toshkent shahri, Olmazor tumani, Yangi TashMI 3-45 uy
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Payment Modal -->
+      <div class="modal" id="payment-modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+        <div
+          class="modal-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="pay-title"
+        >
+          <div class="modal-header">
+            <h3 id="pay-title" class="t en">Payment</h3>
+            <h3 id="pay-title-ru" class="t ru">Оплата</h3>
+            <h3 id="pay-title-uz" class="t uz">To'lov</h3>
+            <button class="modal-close" aria-label="Close" data-close>×</button>
+          </div>
+          <div class="modal-tabs" role="tablist">
+            <button
+              class="modal-tab active"
+              role="tab"
+              aria-selected="true"
+              data-provider="PAYME"
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <img
+                src="https://api.logobank.uz/media/logos_png/payme-01.png"
+                alt=""
+                width="40"
+                style="transform: scale(2.2)"
+              />
+            </button>
+            <button
+              class="modal-tab"
+              role="tab"
+              aria-selected="false"
+              data-provider="CLICK"
+              style="
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <img
+                src="https://api.logobank.uz/media/logos_png/Click-01_hjB080W.png"
+                alt=""
+                width="40"
+                style="transform: scale(2.2)"
+              />
+            </button>
+          </div>
+          <form class="modal-body" id="payment-form">
+            <input type="hidden" name="provider" id="provider" value="PAYME" />
+            <div class="form-row">
+              <label class="form-field">
+                <span class="t en">Name on card</span>
+                <span class="t ru">Имя на карте</span>
+                <span class="t uz">Karta egasi</span>
+                <input type="text" required placeholder="John Doe" />
+              </label>
+            </div>
+            <div class="form-row two">
+              <label class="form-field">
+                <span class="t en">Card number</span>
+                <span class="t ru">Номер карты</span>
+                <span class="t uz">Karta raqami</span>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="[0-9\s]{12,19}"
+                  placeholder="1234 5678 9012 3456"
+                  required
+                />
+              </label>
+              <label class="form-field">
+                <span class="t en">Expiry</span>
+                <span class="t ru">Срок</span>
+                <span class="t uz">Muddati</span>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
+                  placeholder="MM/YY"
+                  required
+                />
+              </label>
+              <label class="form-field">
+                <span>CVV</span>
+                <input
+                  type="password"
+                  inputmode="numeric"
+                  maxlength="4"
+                  placeholder="123"
+                  required
+                />
+              </label>
+            </div>
+            <div class="form-row">
+              <label class="form-field">
+                <span class="t en">Amount (USD)</span>
+                <span class="t ru">Сумма (USD)</span>
+                <span class="t uz">Miqdor (USD)</span>
+                <input type="number" id="amount" min="1" step="1" required />
+              </label>
+            </div>
+            <div class="modal-actions">
+              <button type="submit" class="btn btn-primary">
+                <svg class="icon"><use href="#icon-pay" /></svg>
+                <span class="t en">Pay now</span>
+                <span class="t ru">Оплатить</span>
+                <span class="t uz">To'lash</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <footer class="site-footer" id="footer">
         <div class="container footer-inner">
           <p>© 2025 OrientaTravel. All rights reserved.</p>
           <ul class="footer-links">
@@ -357,5 +525,71 @@
         </div>
       </footer>
     </div>
+    <script>
+      (function () {
+        const modal = document.getElementById('payment-modal');
+        const backdrop = modal.querySelector('.modal-backdrop');
+        const closeEls = modal.querySelectorAll('[data-close]');
+        const providerInput = document.getElementById('provider');
+        const amountInput = document.getElementById('amount');
+        const tabs = modal.querySelectorAll('.modal-tab');
+        const form = document.getElementById('payment-form');
+
+        function openModal(amount) {
+          if (amount) amountInput.value = amount;
+          modal.setAttribute('aria-hidden', 'false');
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+          modal.setAttribute('aria-hidden', 'true');
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.btn-pay').forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const card = btn.closest('.card');
+            const badge = card && card.querySelector('.badge');
+            let amount = '';
+            if (badge) {
+              const match = badge.textContent.replace(/[^0-9]/g, '');
+              if (match) amount = parseInt(match, 10);
+            }
+            openModal(amount);
+          });
+        });
+
+        closeEls.forEach(function (el) {
+          el.addEventListener('click', closeModal);
+        });
+        backdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && modal.classList.contains('open'))
+            closeModal();
+        });
+
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            tabs.forEach(function (t) {
+              t.classList.toggle('active', t === tab);
+              t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+            });
+            providerInput.value = tab.getAttribute('data-provider');
+          });
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          // Demo only: show success and close
+          const provider = providerInput.value;
+          const amount = amountInput.value;
+          alert('Payment initiated via ' + provider + ' for $' + amount);
+          closeModal();
+        });
+      })();
+    </script>
   </body>
 </html>
